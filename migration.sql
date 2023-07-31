@@ -1,26 +1,22 @@
---> Subindo MySQL no terminal Linux --
+-- Cria banco de dados lista_telefonica
+create database lista_telefonica;
 
---> sudo su 
---> apt install mysql-server- -y 
---> systemctl enable mysql
---> systemctl start mysql 
---> systemctl status mysql
---> apt install -y mycli
---> mycli -u root 
---> show database
---> show table
---> create database database_contatos
---> use database_contatos
--->
+-- Define como banco de dados em uso
+use lista_telefonica;
 
+-- Cria a tabela contatos
+-- OBS: Apertar F3 pra ligar MultiLine
+create table contatos (
+    id int not null auto_increment primary key, 
+    nome varchar(100) not null,
+    sobrenome varchar(100) not null,
+    email varchar(100) not null,
+    telefone varchar(15) not null
+);
+-- OBS: Apertar F3 para desabilitar MultiLine se ainda estiver ativo
 
---> Pesquisa 
---> SElECT * FROM contatos(nome bd) WHERE nome(coluna ex:id) LIKE 'nomequequerpesquisarnobancodedados';
---> % antes do nome e/ou depois para pesquisar
---> or = ou para pesquisar 
+-- Cria usuario jessica com senha 123456
+create user 'jessica'@'%' identified by '123456';
 
-
---> Aqui a variável txt_pesquisa procura no banco de dados pelo ID ou pelo NOME, caso o campo vá vazio ele mostra todos os dados
---> $sql = "SELECT * FROM contatos WHERE id='{$txt_pesquisa}' or nome LIKE '%($txt_pesquisa)%' ORDER BY nome ASC LIMIT $inicio, $quantidade"" ; 
---> ORDER BY nome ASC Aqui ordena por nome de A-Z
---> LIMIT $inicio, $quantidade paginação
+-- Garante o privilegio no banco * e na tabela * --> * = todos || ex: nomedobanco.nomedatabela
+grant all privileges on *.* to 'jessica'@'%';
