@@ -13,8 +13,8 @@ create table contatos (
     email varchar(100) not null,
     telefone varchar(15) not null
 );
--- OBS: F3 desabilita MultiLine 
 
+-- OBS: F3 desabilita MultiLine 
 -- Criando usuario jessica com senha 123456
 create user 'jessica'@'%' identified by '123456';
 

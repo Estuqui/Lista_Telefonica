@@ -1,5 +1,5 @@
 <header class="text-center mt-3 mb-5">
-    <h3>Sua lista decontatos <i class="bi bi-person-circle"></i> </h3>
+    <h3>Sua lista de contatos <i class="bi bi-person-circle"></i></h3>
 </header>
 
 <div>
@@ -24,54 +24,49 @@
                 <th>Excluir</th>
             </tr>
         </thead>
-        <tbody>
 
+        <tbody>
             <?php 
                 $quantidade = "";
                 $pagina = (isset($_GET["$pagina"]))?(int)$_GET["pagina"]:1;
                 $inicio = ($quantidade * $pagina) - $pagina;
                 
-                    //Barra de pesquisa - validação 
-                    $txt_pesquisa = (isset($_POST["txt_pesquisa"])) ? $_POST["txt_pesquisa"]:"";
-                    //$sql = "SELECT * FROM contatos WHERE id='$txt_pesquisa' or nome LIKE '%$txt_pesquisa%' ORDER BY nome ASC LIMIT $inicio, $quantidade";
+                //Barra de pesquisa - validação 
+                $txt_pesquisa = (isset($_POST["txt_pesquisa"])) ? $_POST["txt_pesquisa"]:"";
+                //$sql = "SELECT * FROM contatos WHERE id='$txt_pesquisa' or nome LIKE '%$txt_pesquisa%' ORDER BY nome ASC LIMIT $inicio, $quantidade";
                     
-                    //Prepara e Executa a consulta
-                        $sql = "SELECT * FROM contatos";
-                        $rs = mysqli_query($conexao, $sql);
+                //Prepara e Executa a consulta
+                $sql = "SELECT * FROM contatos";
+                $rs = mysqli_query($conexao, $sql);
                     
-                            if($rs){
-                                die("Erro na consulta: " . mysqli_error($conexao));
-                            }
-                    //Tratamento dos dados
-                            while($row = mysqli_fetch_assoc($rs)){
-                                echo "nome: " . $row["nome"], $row["sobrenome"],$row["email"],$row["telefone"] . "<br>";
-                            }
+                    if($rs){
+                        die("Erro na consulta: " . mysqli_error($conexao));}
+                
+                //Tratamento dos dados
+                    while($row = mysqli_fetch_assoc($rs)){
+                        echo "nome: " . $row["nome"], $row["sobrenome"],$row["email"],$row["telefone"];}
 
-                    //Encerramento da conexão
-                        mysqli_close($conexao); 
-                ?>
+                //Encerramento da conexão
+                mysqli_close($conexao); 
+            ?>
             <tr>
-                <td> <?=$dados["id"]?></td>
-                <td class="text-nowrap"><?=$dados["nome"]?></td>
-                <td class="text-nowrap"><?php echo $dados["sobrenome"];?></td>
-                <td class="text-nowrap"><?=$dados["email"]?></td>
-                <td class="text-nowrap"><?=$dados["telefone"]?></td>
+                <td> <?=$dados["id"]?> </td>
+                <td class="text-nowrap"> <?=$dados["nome"]?> </td>
+                <td class="text-nowrap"> <?php echo $dados["sobrenome"];?> </td>
+                <td class="text-nowrap"> <?=$dados["email"]?> </td>
+                <td class="text-nowrap"> <?=$dados["telefone"]?> </td>
 
                 <td class="text-center">
-                    <a class="btn btn-outline-warning btn-sm"
-                        href="index.php?menuop=editarcontato&id=<?=$dados["id"]?>"><i
-                            class="bi bi-pencil-square"></i></a>
+                    <a class="btn btn-outline-warning btn-sm" href="index.php?menuop=editarcontato&id=<?=$dados["id"]?>"><iclass="bi bi-pencil-square"></i></a>
                 </td>
+
                 <td class="text-center">
-                    <a class="btn btn-outline-danger btn-sm"
-                        href="index.php?menuop=excluircontato&id=<?=$dados["id"]?>"><i class="bi bi-trash3"></i></a>
+                    <a class="btn btn-outline-danger btn-sm" href="index.php?menuop=excluircontato&id=<?=$dados["id"]?>"><i class="bi bi-trash3"></i></a>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
-
-<!------------------------------------------------------------>
 
 <ul class="pagination justify-content-center">
 
@@ -87,9 +82,7 @@
 //Total de páginas - ceil arredonda para cima o num de páginas//
     $totalpagina = ceil($numtotal/$quantidade);
 
-
     echo "<li class='page-item'> <span class='page-link'> Total de páginas: " . $numtotal . "</span></li>";
-
     echo '<li class="page-item"><a class="page-link" href="?menuop=contatos&pagina=1">Primeira Página</a>';
 
 

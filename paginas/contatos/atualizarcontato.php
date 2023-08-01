@@ -1,9 +1,8 @@
 <header>
-<h3>Atualizar Contato</h3>
+    <h3>Atualizar Contato</h3>
 </header>
 
 <?php 
-
     $id = mysqli_real_escape_string($conexao,$_POST["id"]);
     $nome = mysqli_real_escape_string($conexao,$_POST["nome"]);
     $sobrenome = mysqli_real_escape_string($conexao,$_POST["sobrenome"]);
@@ -13,6 +12,4 @@
     $rs = mysqli_query($conexao, $sql) or die("Erro ao executar a consulta" . mysqli_error($conexao));
 
     echo "O contato foi atualizado com sucesso";
-
-
 ?>
