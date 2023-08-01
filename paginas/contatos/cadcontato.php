@@ -1,4 +1,4 @@
-<header>
+<header class="text-center mt-3">
     <h3>Cadastro de Contato</h3>
 </header>
 
@@ -41,7 +41,9 @@
     <input type="tel" class="form-control" id="telefone" placeholder="Insira o telefone">
   </div>
   
-  <div>
-        <button class="btn btn-outline-secondary" type="submit" value="Adicionar" name="botaoadicionar"> Adicionar <i class="bi bi-person-fill-add"></i></button>
+    <div class="text-center mt-3">
+        <button class="btn btn-outline-secondary" type="submit" value="Adicionar" name="botaoadicionar" style="width:100%;"> Adicionar <i class="bi bi-person-fill-add"></i></button>
     </div>
 </form>
+
+
