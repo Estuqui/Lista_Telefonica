@@ -10,35 +10,33 @@
 
 <body class="bg-secondary">
 
+  <div class="container">
 
-<form action="#" method="POST">
-
-<div class="d-grid gap-2 col-6 mx-auto">
-      <label for="email">E-mail</label>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <div class="input-group-text">@</div>
-        </div>
-        <input type="text" class="form-control" id="email" placeholder="Digite seu E-mail">
+      <div class="row vh-100 align-items-center justify-content-center">
+          <div class="col-10 col-sm-8 col-md-6 col-lg-4 p-4 bg-white shadow rounded">
+              <div class="row justify-content-center mb-4">
+                <img src="./img/logotipologin.png" alt="Lista Telefônica Online">
+              </div>
+              <form class="needs-validation" action="index.php" method="post" novalidate>
+                <div class="form-group mb-4">
+                  <label class="form-label" for="email">E-mail</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-person-fill"></i></i></span>
+                      <input class="form-control" type="text" name="email" id="email" placeholder="Digite seu E-mail" required>
+                    </div>
+                  
+                <div class="form-group mb-4">
+                  <label class="form-label" for="senha">Senha</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+                      <input class="form-control" type="password" name="senha" id="senha" placeholder="Digite sua Senha" required>
+                    </div>
+                  </div>
+                  <button class="btn btn-success w-100"><i class="bi bi-box-arrow-in-right"></i> Entrar</button>
+              </form>
+          </div>
       </div>
-</div>
-
-<div class="d-grid gap-2 col-6 mx-auto">
-      <label for="senha">Senha</label>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <div class="input-group-text"><i class="bi bi-key-fill"></i></div>
-        </div>
-        <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
-      </div>
-</div>
-
-<div class="d-grid gap-2 col-6 mx-auto">
-<button type="submit" class="btn btn-dark mb-3">Entrar</button>
-</div>
-
-</form>
-
+  </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>

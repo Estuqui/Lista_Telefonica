@@ -1,5 +1,5 @@
 <header class="text-center mt-3">
-    <h3>Cadastro de Contato</h3>
+    <h3>Cadastro de Contato <i class="bi bi-person-fill-add"></i></h3>
 </header>
 
 <form action="index.php?menuop=inserircontato" method="POST">
@@ -42,7 +42,7 @@
   </div>
   
     <div class="text-center mt-3">
-        <button class="btn btn-outline-secondary" type="submit" value="Adicionar" name="botaoadicionar" style="width:100%;"> Adicionar <i class="bi bi-person-fill-add"></i></button>
+        <button class="btn btn-outline-success" type="submit" value="Adicionar" name="botaoadicionar" style="width:100%;"> Adicionar <i class="bi bi-person-fill-add"></i></button>
     </div>
 </form>
 
