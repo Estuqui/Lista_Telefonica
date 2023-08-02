@@ -1,46 +1,59 @@
-<?php 
-    $id = $_GET["id"]; //Recebe o que está na barra de endereço//
-    $sql = "SELECT * FROM contatos WHERE id = {$id}"; //Guarda a consulta SQL//
-    $rs = mysqli_query($conexao,$sql) or die("Erro ao recuperar os dados" . mysqli_error($conexao));
-    $dados = mysqli_fetch_assoc($rs); //Procura pelo índice associativo//
+<?php
+    $id = htmlspecialchars($_GET['id']);
+    $stmt = $conexao->query("SELECT * FROM contatos WHERE id = {$id}");
+    $result = $stmt->fetch_object();
 ?>
 
-<header>
-    <h3>Editar Contato</h3>
+<header class="text-center mt-3">
+    <h3>Editar Contato <i class="bi bi-person-fill-gear"></i> </h3>
 </header>
 
-<div>
-    <form action="index.php?menuop=atualizarcontato" method="POST">
-</div>
 
-    <div> <!-- Aqui os dados salvos no banco de dados já aparecerão para serem alterados // Dados ficam salvo no input -->
-        <label for="id">ID</label>
-        <input type="text" name="id" value="<?php $dados["id"]?>">
-    </div>
-    
-    <div>
+<form action="index.php?menuop=atualizarcontato" method="POST">
+    <input hidden name="id" type="text" value="<?=$_GET["id"]?>">
+
+    <div class="form-group">
         <label for="nome">Nome</label>
-        <input type="text" name="nome" value="<?php $dados["nome"]?>">
-    </div>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+            </div>
+            <input type="text" class="form-control" name="nome" placeholder="Insira o nome" value="<?=$result->nome?>">
+        </div>
 
-    <div>
-        <label for="sobrenome">Sobrenome</label>
-        <input type="text" name="sobrenome" value="<?php $dados["sobrenome"]?>">
-    </div>
+        <div class="form-group">
+            <label for="sobrenome">Sobrenome</label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                </div>
+                <input type="text" class="form-control" name="sobrenome" placeholder="Insira o sobrenome"
+                    value="<?=$result->sobrenome?>">
+            </div>
 
-    <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" value="<?php $dados["email"]?>">
-    </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                    </div>
+                    <input type="text" class="form-control" name="email" placeholder="Insira o E-mail"
+                        value="<?=$result->email?>">
+                </div>
+            </div>
 
-    <div>
-        <label for="telefone">Telefone</label>
-        <input type="tel" name="telefone" value="<?php $dados["telefone"]?>">
-    </div>
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="bi bi-telephone-plus-fill"></i></div>
+                    </div>
+                    <input type="tel" class="form-control" name="telefone" placeholder="Insira o telefone"
+                        value="<?=$result->telefone?>">
+                </div>
 
-    <div>
-        <button type="submit" value="Atualizar" name="botaoatualizar"> Atualizar </button>
-    </div>
-
-    </form>
-</div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-outline-success" type="submit" value="Adicionar" name="botaoadicionar"
+                        style="width:100%;"> Atualizar <i class="bi bi-person-check-fill"></i></button>
+                </div>
+</form>

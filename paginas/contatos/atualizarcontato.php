@@ -3,13 +3,17 @@
 </header>
 
 <?php 
-    $id = mysqli_real_escape_string($conexao,$_POST["id"]);
-    $nome = mysqli_real_escape_string($conexao,$_POST["nome"]);
-    $sobrenome = mysqli_real_escape_string($conexao,$_POST["sobrenome"]);
-    $email = mysqli_real_escape_string($conexao,$_POST["email"]);
-    $telefone = mysqli_real_escape_string($conexao,$_POST["telefone"]);
-    $sql =  "UPDATE contatos SET nome = '{$nome}', sobrenome = '{$sobrenome}', email = '{$email}',telefone = '{$telefone}' WHERE {$id}";
-    $rs = mysqli_query($conexao, $sql) or die("Erro ao executar a consulta" . mysqli_error($conexao));
+    $stmt = $conexao->prepare("UPDATE contatos SET nome = ?, sobrenome = ?, email = ?,telefone = ? WHERE id=?");
+    $stmt->bind_param('ssssd',
+        htmlspecialchars($_POST["nome"], ENT_QUOTES), 
+        htmlspecialchars($_POST["sobrenome"], ENT_QUOTES), 
+        htmlspecialchars($_POST["email"], ENT_QUOTES), 
+        htmlspecialchars($_POST["telefone"], ENT_QUOTES),
+        htmlspecialchars($_POST["id"], ENT_QUOTES)
+    );
+    $stmt->execute();
 
     echo "O contato foi atualizado com sucesso";
 ?>
+
+<!--Função prepare usa-se para inserir-->

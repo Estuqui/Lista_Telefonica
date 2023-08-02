@@ -13,7 +13,7 @@
   <div class="container">
 
       <div class="row vh-100 align-items-center justify-content-center">
-          <div class="col-10 col-sm-8 col-md-6 col-lg-4 p-4 bg-white shadow rounded">
+          <div class="col-10 col-sm-8 col-md-6 col-lg-4 p-4 shadow rounded" style="background-color: rgba(255,255,255,0.2)">
               <div class="row justify-content-center mb-4">
                 <img src="./img/logotipologin.png" alt="Lista Telefônica Online">
               </div>
