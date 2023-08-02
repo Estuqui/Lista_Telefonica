@@ -1,4 +1,4 @@
--- Criação do banco de dados lista_telefonica
+-- Criação do banco de dados lista_telefonica no MySQL
 create database lista_telefonica;
 
 -- Define como banco de dados em uso
@@ -18,5 +18,13 @@ create table contatos (
 -- Criando usuario jessica com senha 123456
 create user 'jessica'@'%' identified by '123456';
 
--- Garantindo o privilegio no banco * e na tabela * --> * = todos || ex: nomedobanco.nomedatabela
+-- Garantindo o privilegio no banco * e na tabela * --> * = todos
 grant all privileges on *.* to 'jessica'@'%';
+
+
+-- Criação do banco para o login no MySQL
+create table 'lista.telefonica' . 'usuarios' ( 
+    loginuser varchar(45) not null primary key,
+    senhauser varchar(64) not null,
+    nomeuser varchar(145) not null,
+);

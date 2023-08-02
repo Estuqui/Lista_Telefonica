@@ -1,43 +1,64 @@
+<?php 
+    require_once("db/config.php");
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Login</title>
 </head>
 
 <body class="bg-secondary">
 
-  <div class="container">
+    <div class="container">
 
-      <div class="row vh-100 align-items-center justify-content-center">
-          <div class="col-10 col-sm-8 col-md-6 col-lg-4 p-4 shadow rounded" style="background-color: rgba(255,255,255,0.2)">
-              <div class="row justify-content-center mb-4">
-                <img src="./img/logotipologin.png" alt="Lista Telefônica Online">
-              </div>
-              <form class="needs-validation" action="index.php" method="post" novalidate>
-                <div class="form-group mb-4">
-                  <label class="form-label" for="email">E-mail</label>
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="bi bi-person-fill"></i></i></span>
-                      <input class="form-control" type="text" name="email" id="email" placeholder="Digite seu E-mail" required>
-                    </div>
-                  
-                <div class="form-group mb-4">
-                  <label class="form-label" for="senha">Senha</label>
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
-                      <input class="form-control" type="password" name="senha" id="senha" placeholder="Digite sua Senha" required>
-                    </div>
-                  </div>
-                  <button class="btn btn-success w-100"><i class="bi bi-box-arrow-in-right"></i> Entrar</button>
-              </form>
-          </div>
-      </div>
-  </div>
+        <div class="row vh-100 align-items-center justify-content-center">
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4 p-4 shadow rounded"
+                style="background-color: rgba(255,255,255,0.2)">
+                <div class="row justify-content-center mb-3">
+                    <img class="text-center" src="#" alt="Sua Lista Telefônica Online">
+                </div>
+                <form class="needs-validation" action="login.php" method="post" novalidate>
+                    <div class="form-group mb-3">
+                        <label class="form-label" for="email">E-mail</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person-fill"></i></i></span>
+                            <input class="form-control" type="text" name="email" id="email"
+                                placeholder="Digite seu E-mail" required>
+                        </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+                        <div class="form-group mb-3">
+                            <label class="form-label" for="senha">Senha</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+                                <input class="form-control" type="password" name="senha" id="senha"
+                                    placeholder="Digite sua Senha" required>
+                            </div>
+                        </div>
+                        <button class="btn btn-success w-100"><i class="bi bi-box-arrow-in-right"></i> Entrar</button>
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-center text-sm mt-1 text-decoration-underline" href="#">É novo por
+                            aqui? Cadastre-se</a>
+                        <a class="dropdown-item text-center text-sm mt-1 text-decoration-underline" href="#">Esqueceu a
+                            senha?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
