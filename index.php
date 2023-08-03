@@ -33,17 +33,18 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="index.php?menuop=cadcontato">Novo Contato <i
                                     class="bi bi-person-fill-add"></i></a>
+
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Sair <i class="bi bi-box-arrow-left"></i></a>
+                            <a class="nav-link" href="logout.php">Sair <i class="bi bi-box-arrow-right"></i></a>
                     </ul>
                 </div>
-            </nav>
+        </div>
+        </nav>
         </div>
     </header>
     <main>
         <div class="container">
             <?php
-                
                     include_once("db/config.php");
 
                     //valida com método GET/ ? - ternário, if em uma linha só
@@ -87,12 +88,10 @@
         </div>
     </main>
 
-
     <!-- Footer para o rodapé -->
     <footer class="container-fluid fixed-bottom bg-dark">
         <div class="text-center">Lista Telefônica V1.0</div>
     </footer>
-
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
@@ -104,8 +103,6 @@
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
     </script>
     <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-
-
 
 </body>
 
