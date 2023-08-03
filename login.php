@@ -12,7 +12,7 @@
         $stmt = $conexao->query("SELECT * FROM usuarios WHERE loginuser = '{$id}' AND senhauser='{$senhauser}' LIMIT 1");
         $result = $stmt->fetch_object();
     
-        if( $linha > 0 ) {
+        if( $result->id !== null ) {
             session_start();
             $_SESSION["usuario"] = $result->loginuser;
             $_SESSION["nome"] = $result->nomeuser;
