@@ -1,3 +1,29 @@
+<?php
+    include("./db/conexao.php");
+    session_start();
+
+    if(isset($_SESSION["loginuser"]) and isset($_SESSION["senhauser"]) ){
+        $loginuser = $_SESSION["loginuser"];
+        $senhauser = $_SESSION["senhauser"];
+        $nomeuser = $_SESSION["nomeuser"];
+
+        $sql = "SELECT * FROM usuarios WHERE loginuser = '{$loginuser}' and senhauser = '{$senhauser}'";
+        $rs = mysqli_query($conexao, $sql);
+        $dados = mysqli_fetch_assoc($rs);
+        $linha = mysqli_num_rows($rs);
+
+        if( $linha == 0 ) {
+            session_unset();
+            session_destroy();
+            header('Location: login.php');
+            exit();
+        }
+    }else{
+        header('Location: login.php');
+        exit(); 
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -45,7 +71,7 @@
     <main>
         <div class="container">
             <?php
-                    include_once("db/config.php");
+                   // include_once("db/config.php");
 
                     //valida com método GET/ ? - ternário, if em uma linha só
                     $menuop=(isset($_GET["menuop"])) ? $_GET["menuop"] : "home";
@@ -87,23 +113,17 @@
                 ?>
         </div>
     </main>
-
-    <!-- Footer para o rodapé -->
-    <footer class="container-fluid fixed-bottom bg-dark">
-        <div class="text-center">Lista Telefônica V1.0</div>
+    <footer class="container-fluid bg-dark text-light">
+        <div class="text-center">SIS Agendador v 1.0</div>
     </footer>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.form.js"></script>
+    <script src="./js/upload.js"></script>
+    <script src="./js/javascript-agendador.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
     </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
-    </script>
-    <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-
 </body>
 
 </html>
