@@ -1,38 +1,26 @@
 <?php 
-//ini_set('display_errors', 'on');
-
-//Conexão com banco de dados
+    //Conexão com banco de dados
     include_once("db/config.php");
 
-
-//Verificar no banco de dados se o usuario existe
-$msg_error = "";
-
-if( isset($_POST["loginuser"]) &&  isset($_POST["senhauser"])  ){
-    $loginuser =  mysqli_real_escape_string($conexao,$_POST["loginuser"]);
-    $senhauser = hash('sha256',$_POST["senhauser"]);
+    //Verificar no banco de dados se o usuario existe
+    $msg_error = "";
     
-    $sql = "SELECT * FROM usuarios WHERE loginuser = '{$loginuser}' and senhauser = '{$senhauser}'";
-    $rs = mysqli_query($conexao, $sql);
-    $dados = mysqli_fetch_assoc($rs);
-    $linha = mysqli_num_rows($rs);
-
-    if( $linha != 0 ) {
-        session_start();
-        $_SESSION["loginuser"] = $loginuser;
-        $_SESSION["senhauser"] = $senhauser;
-        $_SESSION["nomeuser"] = $dados["nomeuser"];
-
-        header('Location: index.php');
+    if( isset($_POST["loginuser"]) &&  isset($_POST["senhauser"])  ){
+        $loginuser =  htmlspecialchars($_POST["loginuser"]);
+        $senhauser = hash('sha256',$_POST["senhauser"]);
         
-
-    }else{
-        $msg_error = "<div class='alert alert-danger mt-3 text-center'>
-                        <p>Usuário ou senha incorretos</p>
-                        </div>
-        ";
+        $stmt = $conexao->query("SELECT * FROM usuarios WHERE loginuser = '{$id}' AND senhauser='{$senhauser}' LIMIT 1");
+        $result = $stmt->fetch_object();
+    
+        if( $linha > 0 ) {
+            session_start();
+            $_SESSION["usuario"] = $result->loginuser;
+            $_SESSION["nome"] = $result->nomeuser;
+            header('Location: index.php');
+        }else{
+            $msg_error = "<div class='alert alert-danger mt-3 text-center'><p>Usuário ou senha incorretos</p></div>";
+        }
     }
-}
 ?>
 
 <!DOCTYPE html>
