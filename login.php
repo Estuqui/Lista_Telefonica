@@ -7,15 +7,15 @@
     
     if( isset($_POST["loginuser"]) &&  isset($_POST["senhauser"])  ){
         $loginuser =  htmlspecialchars($_POST["loginuser"]);
-        $senhauser = hash('sha256',$_POST["senhauser"]);
+        $senhauser = $_POST["senhauser"];
         
-        $stmt = $conexao->query("SELECT * FROM usuarios WHERE loginuser = '{$id}' AND senhauser='{$senhauser}' LIMIT 1");
+        $stmt = $conexao->query("SELECT id, nome, usuario FROM usuarios WHERE usuario = '$loginuser' AND senha='$senhauser' LIMIT 1");
         $result = $stmt->fetch_object();
     
         if( $result->id !== null ) {
             session_start();
-            $_SESSION["usuario"] = $result->loginuser;
-            $_SESSION["nome"] = $result->nomeuser;
+            $_SESSION["usuario"] = $result->usuario;
+            $_SESSION["nome"] = $result->nome;
             header('Location: index.php');
         }else{
             $msg_error = "<div class='alert alert-danger mt-3 text-center'><p>Usuário ou senha incorretos</p></div>";
@@ -44,7 +44,7 @@
                 <div class="row justify-content-center mb-4">
                     <img src="#" alt="Lista Telefônica">
                 </div>
-                <form class="needs-validation" action="login.php" method="post" novalidate>
+                <form class="needs-validation" method="post" novalidate>
                     <div class="form-group mb-4">
                         <label class="form-label" for="loginuser">Login</label>
                         <div class="input-group">

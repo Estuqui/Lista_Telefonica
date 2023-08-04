@@ -15,7 +15,7 @@
     <table class="table table-dark table-hover table-bordered table-sm text-center" id="contatos">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>Id</th>
                 <th>Nome</th>
                 <th>Sobrenome</th>
                 <th>E-mail</th>
@@ -29,10 +29,10 @@
             <?php 
                 //Prepara e Executa a consulta
                 $sql = "SELECT * FROM contatos";
-                $rs = mysqli_query($conexao, $sql);
+                $result = mysqli_query($conexao, $sql);
 
                 //Tratamento dos dados
-                while($dados = mysqli_fetch_assoc($rs)) {
+                while($dados = mysqli_fetch_assoc($result)) {
 
             ?>
             <tr>

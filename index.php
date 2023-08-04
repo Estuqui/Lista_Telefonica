@@ -1,26 +1,9 @@
 <?php
-    include("./db/conexao.php");
+    include("db/config.php");
     session_start();
-
-    if(isset($_SESSION["loginuser"]) and isset($_SESSION["senhauser"]) ){
-        $loginuser = $_SESSION["loginuser"];
-        $senhauser = $_SESSION["senhauser"];
-        $nomeuser = $_SESSION["nomeuser"];
-
-        $sql = "SELECT * FROM usuarios WHERE loginuser = '{$loginuser}' and senhauser = '{$senhauser}'";
-        $rs = mysqli_query($conexao, $sql);
-        $dados = mysqli_fetch_assoc($rs);
-        $linha = mysqli_num_rows($rs);
-
-        if( $linha == 0 ) {
-            session_unset();
-            session_destroy();
-            header('Location: login.php');
-            exit();
-        }
-    }else{
+    
+    if(!isset($_SESSION["usuario"])) {
         header('Location: login.php');
-        exit(); 
     }
 ?>
 
@@ -113,14 +96,14 @@
                 ?>
         </div>
     </main>
-    <footer class="container-fluid bg-dark text-light">
-        <div class="text-center">SIS Agendador v 1.0</div>
+
+
+    <footer class="bg-dark text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright: Sua Lista Telefônica Online.
+        </div>
     </footer>
-    <script src="./js/jquery.js"></script>
-    <script src="./js/jquery.form.js"></script>
-    <script src="./js/upload.js"></script>
-    <script src="./js/javascript-agendador.js"></script>
-    <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
     </script>
