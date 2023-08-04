@@ -1,8 +1,9 @@
-body{
-    background-color: #3b4147;
-    color: white;
+body {
+  background-color: #3b4147;
+  color: white;
+  background-image: url(/img/fundo.png);
 }
 
-.tabela{
-    margin-top: 10px;
+.tabela {
+  margin-top: 10px;
 }

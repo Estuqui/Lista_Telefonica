@@ -23,8 +23,9 @@ grant all privileges on *.* to 'jessica'@'%';
 
 
 -- Criação do banco para o login no MySQL
-create table 'lista.telefonica' . 'usuarios' ( 
-    loginuser varchar(45) not null primary key,
-    senhauser varchar(64) not null,
-    nomeuser varchar(145) not null,
+create table usuarios ( 
+    id int not null auto_increment primary key,
+    usuario varchar(45) not null,
+    senha varchar(64) not null,
+    nome varchar(145) not null,
 );

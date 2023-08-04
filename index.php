@@ -24,7 +24,7 @@
 
 <body>
     <header class="bg-dark">
-        <div class="container-fluid">
+        <div class="container">
             <!-- classe container mede mais ou menos 80% da página total -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="#"><img src="img/logotipo.png" att="Lista Telefônica Online"
@@ -54,7 +54,6 @@
     <main>
         <div class="container">
             <?php
-                   // include_once("db/config.php");
 
                     //valida com método GET/ ? - ternário, if em uma linha só
                     $menuop=(isset($_GET["menuop"])) ? $_GET["menuop"] : "home";
@@ -97,10 +96,8 @@
         </div>
     </main>
 
-
-    <footer class="bg-dark text-center text-lg-start">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    <footer class="container-fluid bg-dark text-center text-light">
+        <div class="text-center">
             © 2023 Copyright: Sua Lista Telefônica Online.
         </div>
     </footer>
