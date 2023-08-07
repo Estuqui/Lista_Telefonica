@@ -44,6 +44,9 @@
         </div>
         <div class="form-box text-black">
             <h2>Faça seu Login</h2>
+            <p> Não tem uma conta? <a href="#" class="alert-link text-white text-decoration-none">
+                    Cadastre-se </a>
+            </p>
             <form class=" needs-validation" method="post" novalidate>
                 <div class="form-group">
                     <label class="form-label text-black mt-4" for="loginuser">

@@ -45,7 +45,7 @@
                             consectetur eleifend.
                             <br><br>
                             Para entrar em contato conosco <a href="index.php?menuop=home" class="alert-link">clique
-                                aqui</a>.
+                                aqui</a>
                         </p>
                     </div>
                 </div>

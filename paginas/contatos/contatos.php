@@ -5,7 +5,8 @@
 <div>
     <form action="index.php?menuop=contatos" method="post">
         <div class="input-group">
-            <input class="form-control" list="datalistOptions" type="text" name="txt_pesquisa" placeholder="Pesquisar">
+            <input class="form-control" list="datalistOptions" type="text" name="txt_pesquisa"
+                value="<?=$txt_pesquisa?>" placeholder="Pesquisar">
             <button class="btn btn-outline-light btn-sm" type="submit"><i class="bi bi-search"></i> Pesquisar</button>
         </div>
     </form>
@@ -27,8 +28,9 @@
 
         <tbody>
             <?php 
+            
                 //Prepara e Executa a consulta
-                $sql = "SELECT * FROM contatos";
+                $sql = "SELECT * FROM contatos WHERE id = '{$txt_pesquisa}' or nome LIKE '%{$txt_pesquisa}%' or telefone LIKE '%{$txt_pesquisa}%' ";
                 $result = mysqli_query($conexao, $sql);
 
                 //Tratamento dos dados
@@ -36,7 +38,7 @@
 
             ?>
             <tr>
-                <td class="text-nowrap text-center"> <?=$dados["id"]?> </td>
+                <td class=" text-nowrap text-center"> <?=$dados["id"]?> </td>
                 <td class="text-nowrap text-center"> <?=$dados["nome"]?> </td>
                 <td class="text-nowrap text-center"> <?php echo $dados["sobrenome"];?> </td>
                 <td class="text-nowrap text-center"> <?=$dados["email"]?> </td>
