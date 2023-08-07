@@ -24,8 +24,7 @@
 
 <body>
     <header class="bg-dark">
-        <div class="container">
-            <!-- classe container mede mais ou menos 80% da página total -->
+        <div class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="#"><img src="img/logotipo.png" att="Lista Telefônica Online"
                         width="120"></a>
@@ -50,9 +49,10 @@
         </div>
         </nav>
         </div>
+
     </header>
     <main>
-        <div class="container">
+        <div class="container-fluid">
             <?php
 
                     //valida com método GET/ ? - ternário, if em uma linha só
@@ -96,14 +96,17 @@
         </div>
     </main>
 
-    <footer class="container-fluid bg-dark text-center text-light">
-        <div class="text-center">
+
+    <footer class="fixar-rodape">
+        <div class="text-center text-white bg-dark mt-2">
             © 2023 Copyright: Sua Lista Telefônica Online.
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
     </script>
+
 </body>
 
 </html>

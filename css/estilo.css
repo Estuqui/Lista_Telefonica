@@ -1,9 +1,17 @@
 body {
   background-color: #3b4147;
   color: white;
-  background-image: url(/img/fundo.png);
 }
 
 .tabela {
   margin-top: 10px;
+}
+
+footer.fixar-rodape {
+  border-top: 1px solid dark;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  position: fixed;
+  width: 100%;
 }

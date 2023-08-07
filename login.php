@@ -30,54 +30,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilologin.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title>Login</title>
 </head>
 
-<body class="bg-dark bg-gradient">
-
-    <div class="container">
-        <div class="row vh-100 align-items-center justify-content-center )">
-            <div class="col-10 col-sm-8 col-md-6 col-lg-4 p-4 bg-dark shadow-lg p-4 mb-3 rounded ">
-                <div class="row justify-content-center">
-                    <img src=" img/logotipo.png" alt="Lista Telefônica">
-                </div>
-                <h5 class="text-white text-center mb-2"><i class="bi bi-arrow-down-right"></i> Faça seu Login <i
-                        class="bi bi-arrow-down-left"></i></h5>
-                <form class=" needs-validation" method="post" novalidate>
-                    <div class="form-group">
-                        <label class="form-label text-white" for="loginuser">
-                        </label>
-                        <div class="input-group">
-                            <span class="input-group-text">
-                                <i class="bi bi-person-fill"></i>
-                            </span>
-                            <input class="form-control" type="text" name="loginuser" id="loginuser" required
-                                placeholder="Digite seu Usuário">
-                        </div>
+<body class="bg-black">
+    <div class="box">
+        <div class="img-box">
+            <img src="img/cadastroLT.png">
+        </div>
+        <div class="form-box text-black">
+            <h2>Faça seu Login</h2>
+            <form class=" needs-validation" method="post" novalidate>
+                <div class="form-group">
+                    <label class="form-label text-black mt-4" for="loginuser">
+                        Usuário </label>
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="loginuser" id="loginuser" required
+                            placeholder="Digite seu Usuário">
                     </div>
-                    <div class="form-group mb-4">
-                        <label class="form-label text-white" for="senhauser"></label>
-                        <div class="input-group">
-                            <span class="input-group-text">
-                                <i class=" bi bi-lock-fill"></i> </span>
-                            <input class="form-control" type="password" name="senhauser" id="senhauser" required
-                                placeholder="Digite sua Senha">
-                        </div>
-
-                        <?php
+                </div>
+                <div class="form-group mt-4 mb-4">
+                    <label class="form-label text-black" for="senhauser">Senha</label>
+                    <div class="input-group">
+                        <input class="form-control" type="password" name="senhauser" id="senhauser" required
+                            placeholder="Digite sua Senha">
+                    </div>
+                    <?php
                             echo $msg_error;
                         ?>
+                    <div class="input-group">
+                        <button>Entrar</button>
                     </div>
-                    <button class="btn btn-outline-light w-100"><i class="bi bi-box-arrow-in-right"></i> Entrar</button>
-                </form>
-            </div>
+
+            </form>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>

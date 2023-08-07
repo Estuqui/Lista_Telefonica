@@ -18,10 +18,8 @@
 ?>
 
 <div class="alert alert-success mt-5" role="alert">
-  <h4 class="alert-heading">Contato atualizado com sucesso!</h4>
-  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-  <hr>
-  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+    <h4 class="alert-heading">Contato atualizado com sucesso!</h4>
+    <hr>
+    <p class="mb-0"> Para retornar a página inicial <a href="index.php?menuop=home" class="alert-link">clique aqui</a>.
+    </p>
 </div>
-
-
