@@ -1,4 +1,3 @@
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -18,7 +17,7 @@
         <div class="form-box">
             <h2>Criar Conta</h2>
             <p> Já é um membro? <a href="login.php" class="alert-link"> Login </a></p>
-            <form action="#">
+            <form action="cadastro.php?menuop=home.php">
                 <div class="input-group">
                     <label for="nome">Nome Completo</label>
                     <input type="text" id="nome" placeholder="Digite o seu nome completo" required>
@@ -42,10 +41,13 @@
                 <div class="input-group">
                     <button>Cadastrar</button>
                 </div>
-
-            </form>
         </div>
+
+        </form>
+
     </div>
+    </div>
+
 </body>
 
 </html>
