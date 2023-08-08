@@ -22,4 +22,7 @@
     <hr>
     <p class="mb-0"> Para retornar a página inicial <a href="index.php?menuop=home" class="alert-link">clique aqui</a>.
     </p>
+    <p class="mb-0">
+        Para retornar a página de contatos <a href="index.php?menuop=contatos" class="alert-link">clique aqui</a>.
+    </p>
 </div>

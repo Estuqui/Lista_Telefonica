@@ -17,7 +17,7 @@
         </div>
         <div class="form-box">
             <h2>Criar Conta</h2>
-            <p> Já é um membro? <a href="#" class="alert-link"> Login </a></p>
+            <p> Já é um membro? <a href="login.php" class="alert-link"> Login </a></p>
             <form action="#">
                 <div class="input-group">
                     <label for="nome">Nome Completo</label>
@@ -27,11 +27,6 @@
                 <div class="input-group">
                     <label for="email">E-mail</label>
                     <input type="email" id="email" placeholder="Digite o seu email" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" placeholder="Digite o seu telefone" required>
                 </div>
 
                 <div class="input-group w50">

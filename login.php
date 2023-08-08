@@ -44,7 +44,7 @@
         </div>
         <div class="form-box text-black">
             <h2>Faça seu Login</h2>
-            <p> Não tem uma conta? <a href="#" class="alert-link text-white text-decoration-none">
+            <p> Não tem uma conta? <a href="cadastro.php" class="alert-link text-white text-decoration-underline">
                     Cadastre-se </a>
             </p>
             <form class=" needs-validation" method="post" novalidate>
