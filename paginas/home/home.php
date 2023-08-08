@@ -44,7 +44,7 @@
                             lacus, fringilla non nisi eget, blandit vestibulum nulla. Nulla pharetra nulla et
                             consectetur eleifend.
                             <br><br>
-                            Para entrar em contato conosco <a href="index.php?menuop=home" class="alert-link">clique
+                            Para entrar em contato conosco <a href="#" class=" alert-link">clique
                                 aqui</a>
                         </p>
                     </div>
